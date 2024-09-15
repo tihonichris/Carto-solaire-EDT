@@ -1,0 +1,165 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Empêche le scroll */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #4285F4; /* Bleu turquoise */
+    color: white; /* Texte en blanc */
+    padding: 0 20px;
+    text-align: left;
+    display: flex;
+    align-items: center; /* Aligne verticalement les éléments au centre */
+    height: 45px; /* Hauteur du header */
+    position: fixed; /* Fixe le header pour qu'il reste en place lors du défilement ou du zoom */
+    width: 100%; /* Assure que le header prend toute la largeur de la page */
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
+    top: 0; /* Positionne le header en haut de la page */
+    left: 0; /* Positionne le header à gauche de la page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre plus visible pour l'effet de profondeur */
+}
+
+.header-logo {
+    height: 40px; /* Hauteur du logo */
+    margin-right: 15px; /* Espace entre le logo et le titre */
+}
+
+.header-content {
+    font-size: 20px; /* Taille du texte pour le titre */
+    font-weight: bold;
+    flex-grow: 1; /* Permet au titre de prendre tout l'espace restant */
+}
+
+.search-container {
+    position: absolute;
+    top: 50px; /* Positionne la barre de recherche juste en dessous du header */
+    left: 20px; /* Aligne la barre de recherche à gauche */
+    z-index: 900; /* S'assure que la barre de recherche est au-dessus de la carte */
+    display: flex;
+    align-items: center;
+}
+
+.import-container {
+    position: absolute;
+    right: 60px; /* Positionne le bouton d'importation à droite */
+    z-index: 1001; /* S'assure que le bouton est au-dessus des autres éléments */
+    display: flex;
+    align-items: center;
+}
+
+#file-input {
+    display: none; /* Cache l'input du fichier */
+}
+
+#import-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Taille de l'icône */
+    color: white; /* Couleur de l'icône */
+}
+
+#search-input {
+    width: 250px; /* Largeur de la barre de recherche */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    padding-left: 20px;
+}
+
+#search-input:focus {
+    border-color: #4A90E2;
+}
+
+#search-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: -40px;
+    padding: 0;
+}
+
+#search-button i {
+    font-size: 16px;
+    color: #4A90E2;
+}
+
+#map-container {
+    position: absolute;
+    top: 50px; /* Positionne la carte juste en dessous du header fixe */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden; /* Empêche tout débordement de la carte */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.property-window {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 1000;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.property-window h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4285F4;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.property-window p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 12px;
+}
+
+.property-window p span {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 5px;
+}
+
+.leaflet-marker-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Déplace les boutons de zoom à droite de la carte, légèrement sous le header */
+.leaflet-control-zoom {
+    right: 10px;
+    top: 40px; /* Ajustement pour être aligné avec la barre de recherche */
+}
+
+.leaflet-control-layers {
+    right: 10px;
+    top: 50px; /* Positionne en dessous des boutons de zoom */
+}

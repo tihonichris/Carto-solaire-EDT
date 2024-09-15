@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carto Solaire EDT ENGIE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	
+</head>
+<body>
+    <header>
+        <img src="LOGO-EDT-ENGIE-BLANC.png" alt="Logo" class="header-logo">
+    <div class="header-content">Carto Solaire</div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Saisir une Ref Tech">
+        <button id="search-button"><i class="fa fa-search"></i></button>
+    </div>
+	
+    <div class="import-container">
+        <span id="import-status" style="margin-right: 10px; color: white;"></span> <!-- Texte pour indiquer le succès ou l'échec de l'importation -->
+        <input type="file" id="file-input" accept=".csv" style="display: none;"> <!-- Input caché pour sélectionner le fichier -->
+        <button id="import-button" title="Importer données"><i class="fa fa-upload"></i></button>
+    </div>
+	
+
+	</header>
+    <div id="map"></div>
+    <div id="property-window" class="property-window" style="display:none;">
+        <h4 id="property-title"></h4>
+        <div id="property-content">
+            <!-- Les informations de la propriété apparaîtront ici -->
+        </div>
+		</div>
+    
+
+
+	
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
